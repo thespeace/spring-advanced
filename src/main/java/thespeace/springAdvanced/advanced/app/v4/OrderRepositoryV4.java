@@ -1,4 +1,4 @@
-package thespeace.springAdvanced.app.v4;
+package thespeace.springAdvanced.advanced.app.v4;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;

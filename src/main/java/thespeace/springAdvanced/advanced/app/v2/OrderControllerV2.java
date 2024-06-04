@@ -1,7 +1,8 @@
-package thespeace.springAdvanced.app.v2;
+package thespeace.springAdvanced.advanced.app.v2;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import thespeace.springAdvanced.trace.TraceStatus;
 import thespeace.springAdvanced.trace.mytrace.MyTraceV2;
@@ -29,10 +30,10 @@ public class OrderControllerV2 {
      *     </li>
      * </ul>
      *
-     * @see <a href="http://localhost:8080/v2/request?itemId=hello">정상 호출</a>
-     * @see <a href="http://localhost:8080/v2/request?itemId=ex">예외 호출</a>
+     * @see <a href="http://localhost:8080/advanced/v2/request?itemId=hello">정상 호출</a>
+     * @see <a href="http://localhost:8080/advanced/v2/request?itemId=ex">예외 호출</a>
      */
-    @GetMapping("/v2/request")
+    @GetMapping("/advanced/v2/request")
     public String request(String itemId) {
 
         TraceStatus status = null;

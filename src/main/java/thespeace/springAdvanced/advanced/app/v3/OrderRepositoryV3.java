@@ -1,22 +1,21 @@
-package thespeace.springAdvanced.app.v2;
+package thespeace.springAdvanced.advanced.app.v3;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
-import thespeace.springAdvanced.trace.TraceId;
 import thespeace.springAdvanced.trace.TraceStatus;
-import thespeace.springAdvanced.trace.mytrace.MyTraceV2;
+import thespeace.springAdvanced.trace.logtrace.LogTrace;
 
 @Repository
 @RequiredArgsConstructor
-public class OrderRepositoryV2 {
+public class OrderRepositoryV3 {
 
-    private final MyTraceV2 trace;
+    private final LogTrace trace;
 
-    public void save(TraceId traceId, String itemId) {
+    public void save(String itemId) {
 
         TraceStatus status = null;
         try {
-            status = trace.beginSync(traceId, "OrderRepository.save()");
+            status = trace.begin("OrderRepository.save()");
 
             //저장 로직
             if(itemId.equals("ex")) {

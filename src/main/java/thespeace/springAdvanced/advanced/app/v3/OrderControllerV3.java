@@ -1,7 +1,8 @@
-package thespeace.springAdvanced.app.v3;
+package thespeace.springAdvanced.advanced.app.v3;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import thespeace.springAdvanced.trace.TraceStatus;
 import thespeace.springAdvanced.trace.logtrace.LogTrace;
@@ -19,10 +20,10 @@ public class OrderControllerV3 {
      * 이제 실제 서비스에 배포한다고 가정해보면 여기에는 심각한 문제가 있다.<br>
      * 다음에 알아보자!
      *
-     * @see <a href="http://localhost:8080/v3/request?itemId=hello">정상 호출</a>
-     * @see <a href="http://localhost:8080/v3/request?itemId=ex">예외 호출</a>
+     * @see <a href="http://localhost:8080/advanced/v3/request?itemId=hello">정상 호출</a>
+     * @see <a href="http://localhost:8080/advanced/v3/request?itemId=ex">예외 호출</a>
      */
-    @GetMapping("/v3/request")
+    @GetMapping("/advanced/v3/request")
     public String request(String itemId) {
 
         TraceStatus status = null;

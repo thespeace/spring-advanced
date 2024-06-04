@@ -1,8 +1,7 @@
-package thespeace.springAdvanced.app.v4;
+package thespeace.springAdvanced.advanced.app.v4;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import thespeace.springAdvanced.trace.TraceStatus;
 import thespeace.springAdvanced.trace.logtrace.LogTrace;
 import thespeace.springAdvanced.trace.template.AbstractTemplate;
 

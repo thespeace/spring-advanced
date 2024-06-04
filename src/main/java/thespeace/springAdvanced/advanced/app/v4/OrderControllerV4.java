@@ -1,9 +1,9 @@
-package thespeace.springAdvanced.app.v4;
+package thespeace.springAdvanced.advanced.app.v4;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import thespeace.springAdvanced.trace.TraceStatus;
 import thespeace.springAdvanced.trace.logtrace.LogTrace;
 import thespeace.springAdvanced.trace.template.AbstractTemplate;
 
@@ -20,10 +20,10 @@ public class OrderControllerV4 {
      * 객체를 생성하면서 AbstractTemplate 를 상속받은 자식 클래스를 정의했다.
      * 따라서 별도의 자식 클래스를 직접 만들지 않아도 된다.
      *
-     * @see <a href="http://localhost:8080/v4/request?itemId=hello">정상 호출</a>
-     * @see <a href="http://localhost:8080/v4/request?itemId=ex">예외 호출</a>
+     * @see <a href="http://localhost:8080/advanced/v4/request?itemId=hello">정상 호출</a>
+     * @see <a href="http://localhost:8080/advanced/v4/request?itemId=ex">예외 호출</a>
      */
-    @GetMapping("/v4/request")
+    @GetMapping("/advanced/v4/request")
     public String request(String itemId) {
         AbstractTemplate<String> template = new AbstractTemplate<>(trace) {
             @Override

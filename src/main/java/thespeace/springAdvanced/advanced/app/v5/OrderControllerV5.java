@@ -1,6 +1,7 @@
-package thespeace.springAdvanced.app.v5;
+package thespeace.springAdvanced.advanced.app.v5;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import thespeace.springAdvanced.trace.callback.TraceCallback;
 import thespeace.springAdvanced.trace.callback.TraceTemplate;
@@ -47,10 +48,10 @@ public class OrderControllerV5 {
 
     /**
      * <h2>템플릿 콜백 패턴 - 적용</h2>
-     * @see <a href="http://localhost:8080/v5/request?itemId=hello">정상 호출</a>
-     * @see <a href="http://localhost:8080/v5/request?itemId=ex">예외 호출</a>
+     * @see <a href="http://localhost:8080/advanced/v5/request?itemId=hello">정상 호출</a>
+     * @see <a href="http://localhost:8080/advanced/v5/request?itemId=ex">예외 호출</a>
      */
-    @GetMapping("/v5/request")
+    @GetMapping("/advanced/v5/request")
     public String request(String itemId) {
         return Template.execute("OrderController.request()", new TraceCallback<>() {
             @Override

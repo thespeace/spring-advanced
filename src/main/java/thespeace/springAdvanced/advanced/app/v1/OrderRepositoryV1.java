@@ -1,15 +1,15 @@
-package thespeace.springAdvanced.app.v3;
+package thespeace.springAdvanced.advanced.app.v1;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import thespeace.springAdvanced.trace.TraceStatus;
-import thespeace.springAdvanced.trace.logtrace.LogTrace;
+import thespeace.springAdvanced.trace.mytrace.MyTraceV1;
 
 @Repository
 @RequiredArgsConstructor
-public class OrderRepositoryV3 {
+public class OrderRepositoryV1 {
 
-    private final LogTrace trace;
+    private final MyTraceV1 trace;
 
     public void save(String itemId) {
 

@@ -1,4 +1,4 @@
-package thespeace.springAdvanced.app.v5;
+package thespeace.springAdvanced.advanced.app.v5;
 
 import org.springframework.stereotype.Service;
 import thespeace.springAdvanced.trace.callback.TraceTemplate;
