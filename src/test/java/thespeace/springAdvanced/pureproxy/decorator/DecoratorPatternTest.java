@@ -2,10 +2,7 @@ package thespeace.springAdvanced.pureproxy.decorator;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
-import thespeace.springAdvanced.pureproxy.decorator.code.Component;
-import thespeace.springAdvanced.pureproxy.decorator.code.DecoratorPatternClient;
-import thespeace.springAdvanced.pureproxy.decorator.code.MessageDecorator;
-import thespeace.springAdvanced.pureproxy.decorator.code.RealComponent;
+import thespeace.springAdvanced.pureproxy.decorator.code.*;
 
 @Slf4j
 public class DecoratorPatternTest {
@@ -35,6 +32,24 @@ public class DecoratorPatternTest {
         Component realComponent = new RealComponent();
         Component messageDecorator = new MessageDecorator(realComponent);
         DecoratorPatternClient client = new DecoratorPatternClient(messageDecorator);
+        client.execute();
+    }
+
+    /**
+     * <h1>데코레이터 패턴(실행 시간을 측정) 추가</h1>
+     * 기존 데코레이터에 더해서 실행 시간을 측정하는 기능까지 추가해보자.
+     *
+     * 클래스 의존 관계 : `Client -> Component <- RealComponent and MessageDecorator and TimeDecorator`<br>
+     * 런타임 객체 의존 관계 : `client -( operation() )-> timeDecorator -( operation() )-> messageDecorator -( operation() )-> realComponent`<p><p>
+     *
+     * client -> timeDecorator -> messageDecorator -> realComponent 의 객체 의존관계를 설정하고, 실행한다.
+     */
+    @Test
+    void decorator2() {
+        Component realComponent = new RealComponent();
+        Component messageDecorator = new MessageDecorator(realComponent);
+        Component timeDecorator = new TimeDecorator(messageDecorator);
+        DecoratorPatternClient client = new DecoratorPatternClient(timeDecorator);
         client.execute();
     }
 }
