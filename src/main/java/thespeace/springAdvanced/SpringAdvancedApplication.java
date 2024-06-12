@@ -9,6 +9,7 @@ import thespeace.springAdvanced.proxy.config.AppV2Config;
 import thespeace.springAdvanced.proxy.config.v1_proxy.ConcreteProxyConfig;
 import thespeace.springAdvanced.proxy.config.v1_proxy.InterfaceProxyConfig;
 import thespeace.springAdvanced.proxy.config.v2_dynamicproxy.DynamicProxyBasicConfig;
+import thespeace.springAdvanced.proxy.config.v2_dynamicproxy.DynamicProxyFilterConfig;
 import thespeace.springAdvanced.trace.logtrace.LogTrace;
 import thespeace.springAdvanced.trace.logtrace.ThreadLocalLogTrace;
 
@@ -16,7 +17,8 @@ import thespeace.springAdvanced.trace.logtrace.ThreadLocalLogTrace;
 //@Import({AppV1Config.class, AppV2Config.class})
 //@Import(InterfaceProxyConfig.class)
 //@Import(ConcreteProxyConfig.class)
-@Import(DynamicProxyBasicConfig.class)
+//@Import(DynamicProxyBasicConfig.class)
+@Import(DynamicProxyFilterConfig.class)
 //컴포넌트 스캔에 의해 hello.proxy.config 위치의 설정 파일들이 스프링 빈으로 자동 등록 되지 않도록 컴포넌스 스캔의 시작 위치를 지정.
 @SpringBootApplication(scanBasePackages = "thespeace.springAdvanced.proxy.config.v2_dynamicproxy") //주의.
 public class SpringAdvancedApplication {
