@@ -30,7 +30,7 @@ import thespeace.springAdvanced.trace.logtrace.LogTrace;
  * @see <a href="http://localhost:8080/proxy/v1/request?itemId=ex">예외 호출</a>
  */
 @Slf4j
-@Configuration
+//@Configuration
 public class ProxyFactoryConfigV1 {
 
     @Bean
